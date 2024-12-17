@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <script>
+         setWindowRect(0,0,window.screen.height,window.screen.width);
+         setWindowDrag(0,0,350,60);
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <title>n</title>
+    <style>
+        body {
+            font-family: "Kosugi Maru", serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .menu-container {
+            width: 437px;
+            height: 300px;
+            margin: 50px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-header {
+    background-color: #4EAEC6;
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    border-top-left-radius: 10px; /* 左上の角を丸める */
+    border-top-right-radius: 10px; /* 右上の角を丸める */
+}
+
+        .tab-container {
+            display: flex;
+            justify-content: space-around;
+            background: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .tab {
+            padding: 8px 12px;
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+            cursor: pointer;
+            height: 15px;
+            flex: 1;
+        }
+
+        .tab.active {
+            background-color: #4294a8;
+            color: white;
+        }
+
+        .content-container {
+            flex: 1;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+
+        .content-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .content {
+            display: none;
+            padding: 15px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .hikakin {
+            font-family: "Kosugi Maru", serif;
+            width: 200px;
+            height: 60px;
+            color: #fff;
+            background-color: #394454;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 15px;
+            padding: 0 8px;
+            margin: 5px 0;
+            font-size: 15px;
+        }
+
+        button:active {
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="menu-header">メニューうううんｗｗｗｗｗ</div>
+        <div class="tab-container">
+            <div class="tab active" onclick="openTab(event, 'y1')">要素</div>
+            <div class="tab" onclick="openTab(event, 'settings')">使い方</div>
+            <div class="tab" onclick="openTab(event, 'chat')">チャット</div>
+        </div>
+        <div class="content-container">
+            <div id="y1" class="content active">
+                <button class="hikakin" onclick="f63()">まんこ</button>
+
+            </div>
+            <div id="settings" class="content">
+                a
+            </div>
+            <div id="chat" class="content">
+              入力欄とnode.jsでチャットするところを作りたい
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(event, tabName) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function f63() {
+            const result = confirm("実行しますか？");
+            if (result) { //OKのときの処理
+                h5gg.clearResults();
+                h5gg.searchNumber('15.0', 'F32', '0x000000000', '0x200000000');
+                h5gg.editAll('5', 'F32');
+            } else {
+                alert("キャンセルされました");
+            }
+        }
+    </script>
+</body>
+</html>
